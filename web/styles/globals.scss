@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, *{
+  color: black;
+}
+
+.portableText ul{
+  list-style: disc;
+  padding-left: 22px;
+}
+
+@media(min-width: 1440px){
+  .portableText ul{
+    padding-left: 1.527vw;
+  }
+}
