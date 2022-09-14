@@ -30,7 +30,9 @@ function Layout(props) {
   ]
 
   setGlobalURL.forEach(menuItem => {
-    
+
+    if(!menuItem) return;
+
     const {slug} = menus.find(item => item._id == menuItem.link._ref);
     
     if(!slug) {
@@ -47,6 +49,9 @@ function Layout(props) {
   })
   
   globalMenus.forEach(menuItem => {
+
+    if(!menuItem) return;
+    
     menuItem.forEach(menu => {
 
       const {slug} = menus.find(item => item._id == menu.link._ref);

@@ -50,8 +50,9 @@ export const getStaticProps = async ({ params }) => {
     getMenus("route")
   ]
 
-  const [siteSettings, menus] = await Promise.all(loadParallel);
-
+  let [siteSettings, menus] = await Promise.all(loadParallel);
+  p
+  
   return {
     props:{
       props: { siteSettings, menus } || {},

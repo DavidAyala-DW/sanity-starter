@@ -57,7 +57,7 @@ export const getStaticProps = async ({ params }) => {
   ]
 
   let [data, siteSettings, menus] = await Promise.all(loadParallel)
-
+  siteSettings = siteSettings == null ?  {} : siteSettings;
   data = await fulfillSectionQueries(data, menus)
   data.slug = slug;
 

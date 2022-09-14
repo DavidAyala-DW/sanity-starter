@@ -71,13 +71,17 @@ export default function Header(props) {
 
         <div className="hidden md:block order-3 select-none">
 
-          <Link href={reservationsButton?.link?.url} passHref>
-            <a target="_blank" rel="noopener nooreferrer" className="block">
-              <p className="font-medium text-white text-lg vw:text-[.9375vw] leading-[21px] vw:leading-[1.166] tracking-[.05em] uppercase opacity-70">
-                {reservationsButton?.title}
-              </p>
-            </a>
-          </Link>
+          {
+            reservationsButton && (
+              <Link href={reservationsButton?.link?.url} passHref>
+                <a target="_blank" rel="noopener nooreferrer" className="block">
+                  <p className="font-medium text-white text-lg vw:text-[.9375vw] leading-[21px] vw:leading-[1.166] tracking-[.05em] uppercase opacity-70">
+                    {reservationsButton?.title}
+                  </p>
+                </a>
+              </Link>
+            )
+          }
 
         </div>
         
@@ -94,7 +98,7 @@ export default function Header(props) {
 
             <div className="flex flex-col w-full items-center md:items-start space-y-2 vw:space-y-[.416vw]">
 
-              { mainNav.map((item,index) => {
+              { mainNav && mainNav.map((item,index) => {
 
                 if(index < 4){
 
@@ -116,7 +120,7 @@ export default function Header(props) {
 
             <div className="flex flex-col w-full items-center md:items-start space-y-2 vw:space-y-[.416vw]">
 
-              {mainNav.map((item,index) => {
+              {mainNav && mainNav.map((item,index) => {
 
                 if(index >= 4){
 
@@ -134,11 +138,13 @@ export default function Header(props) {
 
               })}
 
-              <Link href={reservationsButton?.link?.url} passHref>
-                <a target="_blank" rel="noopener nooreferrer" onClick={handleClick} className="md:hidden block uppercase tracking-[.05em] text-[32px] md:text-[48px] vw:text-[2.5vw] leading-[1.2] font-light opacity-90">
-                  {reservationsButton?.title}
-                </a>
-              </Link>
+              {reservationsButton && (
+                <Link href={reservationsButton?.link?.url} passHref>
+                  <a target="_blank" rel="noopener nooreferrer" onClick={handleClick} className="md:hidden block uppercase tracking-[.05em] text-[32px] md:text-[48px] vw:text-[2.5vw] leading-[1.2] font-light opacity-90">
+                    {reservationsButton?.title}
+                  </a>
+                </Link>
+              )}
               
             </div>
 

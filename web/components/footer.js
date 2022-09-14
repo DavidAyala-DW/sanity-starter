@@ -36,7 +36,7 @@ export default function Footer(props) {
 
         <div className="grid md:max-w-[35%] md2:max-w-full lg:max-w-[294px] grid-cols-3 gap-x-[40px] md:gap-x-[65px] lg:gap-x-10 vw:gap-x-[2.08333vw] gap-y-8 vw:gap-y-[1.6666vw]">
 
-          {footerNav.map( (item, i) => {
+          {footerNav && footerNav.map( (item, i) => {
 
             const {title,link} = item;
             return (
@@ -51,17 +51,25 @@ export default function Footer(props) {
 
         <div className="hidden md2:flex items-center space-x-[30px] vw:space-x-[1.5625vw]">
 
-          <Link href={privacyPolicyHandle.link.url} passHref>
-            <a className="block text-white text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
-              {privacyPolicyHandle.title}
-            </a>
-          </Link>
+          {
+            privacyPolicyHandle && (
+              <Link href={privacyPolicyHandle?.link?.url} passHref>
+                <a className="block text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
+                  {privacyPolicyHandle?.title}
+                </a>
+              </Link>
+            )
+          }
 
-          <Link href={cookiesPreferencesHandle.link.url} passHref>  
-            <a className="block text-white text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
-              {cookiesPreferencesHandle.title}
-            </a>
-          </Link>
+          {
+            cookiesPreferencesHandle && (
+              <Link href={cookiesPreferencesHandle?.link?.url} passHref>  
+                <a className="block text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
+                  {cookiesPreferencesHandle?.title}
+                </a>
+              </Link>
+            )
+          }
 
         </div>
 
@@ -71,7 +79,7 @@ export default function Footer(props) {
 
         <div className="flex flex-col space-y-6 md:space-y-8 md2:space-y-8 vw:space-y-[1.666vw]">
 
-          <h3 className="block text-white text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
+          <h3 className="block text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
             Newsletter
           </h3>  
 
@@ -136,22 +144,30 @@ export default function Footer(props) {
 
           <div className="flex md2:hidden items-center space-x-[50px] vw:space-x-[2.604vw]">
 
-            <Link href={privacyPolicyHandle.link.url} passHref>
-              <a className="block text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
-                {privacyPolicyHandle.title}
-              </a>
-            </Link>
+            {
+              privacyPolicyHandle && (
+                <Link href={privacyPolicyHandle?.link?.url} passHref>
+                  <a className="block text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
+                    {privacyPolicyHandle?.title}
+                  </a>
+                </Link>
+              )
+            }
 
-            <Link href={cookiesPreferencesHandle.link.url} passHref>
-              <a className="block text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
-                {cookiesPreferencesHandle.title}
-              </a>
-            </Link>
+            {
+              cookiesPreferencesHandle && (
+                <Link href={cookiesPreferencesHandle?.link?.url} passHref>
+                  <a className="block text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
+                    {cookiesPreferencesHandle?.title}
+                  </a>
+                </Link>                
+              )
+            }
 
           </div>
 
           <p className="block text-white opacity-80 text-[10px] vw:text-[.520vw] leading-[11px] vw:leading-[1.1] tracking-[.05em] font-normal uppercase">
-            ©2022 Noble 33
+            ©2022 Site
           </p>
 
         </div>
